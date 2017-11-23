@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{%extends 'app1/base.html'%}
+{%block body_block%}
+<div class="jumbotran">
+  {%if registered%}
+  <h1>Thanks for registration</h1>
+  {%else%}
+  <h1>Please fill out this form!</h1>
+<form method="post" enctype="multipart/form-data">
+  {{form1.as_p}}
+  {{form2.as_p}}
+  {%csrf_token%}
+  <input type="submit" class="btn btn-primary" value="Submit">
+</form>
+</div>
+{%endif%}
+{%endblock%}
